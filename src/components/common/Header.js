@@ -1,14 +1,21 @@
-import React, {PropTypes} from 'react';
-import { Link, IndexLink } from 'react-router';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  const activeStyle = { color: "#F15B2A" };
   return (
     <nav>
-      <IndexLink to="/" activeClassName="active"> Home </IndexLink>
+      <NavLink to="/" activeStyle={activeStyle} exact>
+        Home
+      </NavLink>
       {" | "}
-      <Link to="/courses" activeClassName="active"> Courses </Link>
+      <NavLink to="/courses" activeStyle={activeStyle}>
+        Courses
+      </NavLink>
       {" | "}
-      <Link to="/about" activeClassName="active"> About </Link>
+      <NavLink to="/about" activeStyle={activeStyle}>
+        About
+      </NavLink>
     </nav>
   );
 };
